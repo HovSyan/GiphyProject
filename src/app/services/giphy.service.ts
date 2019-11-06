@@ -10,6 +10,5 @@ export class GiphyService {
   constructor(private http: HttpClient) { }
 
   public getGiphsBySearchWord(searchWord: string): Observable<any> {
-    this.http.get()
   }
 }
