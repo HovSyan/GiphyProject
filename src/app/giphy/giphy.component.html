@@ -1,6 +1,10 @@
 <input type="text" placeholder="Search for a giph" [(ngModel)]="searchWord">
 <button (click)="onSearchClick()">Search</button>
 
-<div *ngFor="let gifObject of searchResultGifs">
-  <img src="{{gifObject.images.original.url}}" [alt]="gifObject.title">
+<div *ngIf="searchResultGifs.length > 0">
+  <div *ngFor="let gifObject of searchResultGifs; trackBy: trackById">
+    <img src="{{gifObject.images.original.url}}" [alt]="gifObject.title">
+  </div>
+
+  <button (click)="onLoadMoreClick()">Load more</button>
 </div>
