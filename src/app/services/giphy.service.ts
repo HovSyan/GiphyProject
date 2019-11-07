@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {forkJoin, Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {AppPropertyService} from './app-property.service';
-import {switchMap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +14,10 @@ export class GiphyService {
               private appPropertyService: AppPropertyService) { }
 
   public getGiphsBySearchWord(searchWord: string): Observable<any> {
-    forkJoin(this.appPropertyService.getAppProperty(this.GIPH_API_URL),
-      this.appPropertyService.getAppProperty(this.GIPH_API_REMOTE_KEY)).subscribe((v) => {
-        console.log(v);
-      })
+    const url = this.appPropertyService.getAppProperty(this.GIPH_API_URL);
+    const remoteKey = this.appPropertyService.getAppProperty(this.GIPH_API_REMOTE_KEY);
 
+    console.log({url, remoteKey});
     return of(null);
   }
 }
