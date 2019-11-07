@@ -8,3 +8,6 @@
 
   <button (click)="onLoadMoreClick()">Load more</button>
 </div>
+<div *ngIf="onceSearched && searchResultGifs.length == 0">
+  <p>No gifs found</p>
+</div>

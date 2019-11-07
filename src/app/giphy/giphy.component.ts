@@ -11,6 +11,7 @@ export class GiphyComponent implements OnInit {
   searchWord = '';
   lastSearchedWord = '';
   searchResultGifs: Array<GifObject> = [];
+  onceSearched = false;
   offset = 0;
 
   constructor(private giphyService: GiphyService) { }
@@ -24,6 +25,7 @@ export class GiphyComponent implements OnInit {
       this.offset = 0;
       this.giphyService.getGiphsBySearchWord(this.searchWord, this.offset).subscribe((result: any) => {
         this.searchResultGifs = result.data;
+        this.onceSearched = true;
         console.log(this.searchResultGifs);
       }, e => console.error(e));
     }
