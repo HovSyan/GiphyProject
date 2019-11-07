@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GiphyComponent } from './giphy/giphy.component';
 import {FormsModule} from '@angular/forms';
 import {GiphyService} from './services/giphy.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {GiphyService} from './services/giphy.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     GiphyService
