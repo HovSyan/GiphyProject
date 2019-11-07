@@ -17,7 +17,6 @@ export class GiphyService {
     const url = this.appPropertyService.getAppProperty(this.GIPH_API_URL);
     const remoteKey = this.appPropertyService.getAppProperty(this.GIPH_API_REMOTE_KEY);
 
-    console.log({url, remoteKey});
-    return of(null);
+    return this.http.get(`${url}gifs/search?api_key=${remoteKey}&q=${searchWord}`);
   }
 }
