@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GiphyService} from '../services/giphy.service';
+import {GifObject} from '../model/Gif';
 
 @Component({
   selector: 'app-giphy',
@@ -8,6 +9,8 @@ import {GiphyService} from '../services/giphy.service';
 })
 export class GiphyComponent implements OnInit {
   searchWord = '';
+  searchResultGifs: Array<GifObject> = [];
+  offset = 0;
 
   constructor(private giphyService: GiphyService) { }
 
@@ -16,7 +19,10 @@ export class GiphyComponent implements OnInit {
 
   onSearchClick() {
     if (this.searchWord.length > 0) {
-      this.giphyService.getGiphsBySearchWord(this.searchWord).subscribe(console.log);
+      this.giphyService.getGiphsBySearchWord(this.searchWord, this.offset).subscribe((result: any) => {
+        this.searchResultGifs = result.data;
+        console.log(this.searchResultGifs);
+      }, e => console.error(e));
     }
   }
 }

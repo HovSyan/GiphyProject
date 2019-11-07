@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {forkJoin, Observable, of} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {AppPropertyService} from './app-property.service';
 
 @Injectable({
@@ -13,10 +13,18 @@ export class GiphyService {
   constructor(private http: HttpClient,
               private appPropertyService: AppPropertyService) { }
 
-  public getGiphsBySearchWord(searchWord: string): Observable<any> {
+  public getGiphsBySearchWord(searchWord: string, offset?: number | string): Observable<any> {
     const url = this.appPropertyService.getAppProperty(this.GIPH_API_URL);
     const remoteKey = this.appPropertyService.getAppProperty(this.GIPH_API_REMOTE_KEY);
+    const params = {
+      api_key: remoteKey,
+      q: searchWord
+    };
 
-    return this.http.get(`${url}gifs/search?api_key=${remoteKey}&q=${searchWord}`);
+    if (offset) {
+      params.offset = offset.toString();
+    }
+
+    return this.http.get(`${url}gifs/search`, {params});
   }
 }
