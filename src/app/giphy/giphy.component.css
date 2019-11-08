@@ -1,0 +1,78 @@
+input {
+  width: 25em;
+  height: 100%;
+  color: #232624;
+  border-radius: 5px;
+  border: none;
+  background-color: #d7deda;
+  padding-left: 10px;
+  line-height: 2em;
+  font-size: 16px;
+}
+
+input:focus button:focus {
+  outline: none;
+}
+
+button {
+  position: relative;
+  background-color: #d7deda;
+  border: none;
+  margin-left: 20px;
+  color: #232624;
+  width: 5em;
+  border-radius: 5px;
+  height: 100%;
+  text-align: center;
+  transition-duration: 1s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+button:after {
+  content: "";
+  background: #94a69b;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 1s
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+  outline: none;
+}
+
+.h-height-2em {
+  height: 2em;
+}
+
+.h-padding {
+  padding: 5px;
+}
+
+.h-fixed-position-top {
+  position: relative;
+  top: 0;
+}
+
+.h-width-6em {
+  width: 6em;
+}
+
+.h-powered-by-giphy {
+  background: url("../../assets/Poweredby_640px-White_VertLogo.png") center;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 310px;
+  height: 112px;
+}
