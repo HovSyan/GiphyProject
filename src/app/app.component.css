@@ -1,0 +1,24 @@
+.h-powered-by-giphy {
+  background: url("../assets/Poweredby_640px-White_VertLogo.png") center;
+  top: 10px;
+  right: 10px;
+  width: 77.5px;
+  height: 28px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.h-github {
+  background: url("../assets/github-icon-24.jpg") center;
+  top: 50px;
+  right: 10px;
+  width: 46px;
+  height: 45px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.h-fixed-pannel-right {
+  position: fixed;
+  right: 10px;
+}

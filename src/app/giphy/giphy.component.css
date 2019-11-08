@@ -67,12 +67,3 @@ button:active:after {
 .h-width-6em {
   width: 6em;
 }
-
-.h-powered-by-giphy {
-  background: url("../../assets/Poweredby_640px-White_VertLogo.png") center;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  width: 310px;
-  height: 112px;
-}

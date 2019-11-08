@@ -1,7 +1,6 @@
 <div class="h-height-2em h-padding h-fixed-position-top">
   <input type="text" placeholder="Search for a giph" [(ngModel)]="searchWord">
   <button (click)="onSearchClick()">Search</button>
-  <div class="h-powered-by-giphy">sss </div>
 </div>
 <div *ngIf="searchResultGifs.length > 0">
   <div *ngFor="let gifObject of searchResultGifs; trackBy: trackById">

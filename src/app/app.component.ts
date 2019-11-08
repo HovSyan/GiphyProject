@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'giphy-project';
+  private readonly GIPHY_PAGE_URL = 'https://giphy.com/';
+
+  onPoweredByGiphyClick() {
+    window.location.href = this.GIPHY_PAGE_URL;
+  }
 }
