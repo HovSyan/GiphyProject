@@ -1,3 +1,5 @@
+import {ImageObject} from './Image';
+
 export class GifObject {
   constructor(public type: string,
               public id: string,
@@ -13,7 +15,8 @@ export class GifObject {
               public updateDatetime: string,
               public createDatetime: string,
               public importDatetime: string,
-              public title: string) { }
+              public title: string,
+              public images: ImageObject) { }
 
   get bitly_url(): string {
     return this.bitlyUrl;
