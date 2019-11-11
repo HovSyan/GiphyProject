@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {GiphyService} from '../services/giphy.service';
 import {GifObject} from '../model/Gif';
 
@@ -14,9 +14,12 @@ export class GiphyComponent implements OnInit {
   onceSearched = false;
   offset = 0;
 
+  @ViewChild('searchButton', {static: false}) searchButton: ElementRef;
+
   constructor(private giphyService: GiphyService) { }
 
   ngOnInit() {
+    this.setEnterKeyEventListenerForSearch();
   }
 
   onSearchClick() {
@@ -40,5 +43,14 @@ export class GiphyComponent implements OnInit {
 
   trackById(index, gifObject: GifObject) {
     return gifObject.id;
+  }
+
+  private setEnterKeyEventListenerForSearch() {
+    this.searchButton.nativeElement.addEventListener('keyup', (e) => {
+      const key = e.which || e.keyCode;
+      if (key === 13) { // 13 is enter
+        this.onSearchClick();
+      }
+    });
   }
 }

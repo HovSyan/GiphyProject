@@ -1,5 +1,9 @@
-<app-giphy></app-giphy>
-<div class="h-fixed-pannel-right">
-  <div (click)="onPoweredByGiphyClick()" class="h-powered-by-giphy"> </div>
-  <div (click)="onPoweredByGiphyClick()" class="h-github"> </div>
+<div class="h-display-flex h-justify-space-between">
+  <div class="h-width-90per">
+    <app-giphy></app-giphy>
+  </div>
+  <div class="h-width-100px h-display-flex h-flex-column h-padding-right-20px">
+    <div (click)="onPoweredByGiphyClick()" class="h-powered-by-giphy h-self-align-flex-end"> </div>
+    <div (click)="onGithubClick()" class="h-github h-self-align-flex-end"> </div>
+  </div>
 </div>
