@@ -67,3 +67,7 @@ button:active:after {
 .h-width-6em {
   width: 6em;
 }
+
+.h-color-white {
+  color: white;
+}

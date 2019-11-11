@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {GiphyService} from '../services/giphy.service';
 import {GifObject} from '../model/Gif';
 
@@ -7,18 +7,19 @@ import {GifObject} from '../model/Gif';
   templateUrl: './giphy.component.html',
   styleUrls: ['./giphy.component.css']
 })
-export class GiphyComponent implements OnInit {
+export class GiphyComponent implements OnInit, AfterViewInit {
   searchWord = '';
   lastSearchedWord = '';
   searchResultGifs: Array<GifObject> = [];
   onceSearched = false;
   offset = 0;
 
-  @ViewChild('searchButton', {static: false}) searchButton: ElementRef;
-
   constructor(private giphyService: GiphyService) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
     this.setEnterKeyEventListenerForSearch();
   }
 
@@ -46,7 +47,7 @@ export class GiphyComponent implements OnInit {
   }
 
   private setEnterKeyEventListenerForSearch() {
-    this.searchButton.nativeElement.addEventListener('keyup', (e) => {
+    document.body.addEventListener('keyup', (e) => {
       const key = e.which || e.keyCode;
       if (key === 13) { // 13 is enter
         this.onSearchClick();
