@@ -3,8 +3,6 @@
   width: 77.5px;
   height: 28px;
   background-size: cover;
-  cursor: pointer;
-  margin: 5px;
 }
 
 .h-github {
@@ -12,6 +10,16 @@
   width: 46px;
   height: 45px;
   background-size: cover;
+}
+
+.h-facebook {
+  background: url("../assets/facebook.png") center;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+}
+
+.h-facebook, .h-github, .h-powered-by-giphy {
   cursor: pointer;
   margin: 5px;
 }
