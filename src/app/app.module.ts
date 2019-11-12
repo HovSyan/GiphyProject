@@ -6,6 +6,7 @@ import { GiphyComponent } from './giphy/giphy.component';
 import {FormsModule} from '@angular/forms';
 import {GiphyService} from './services/giphy.service';
 import {HttpClientModule} from '@angular/common/http';
+import {LazyLoadImageModule, scrollPreset} from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,10 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    LazyLoadImageModule.forRoot({
+      preset: scrollPreset
+    }),
   ],
   providers: [
     GiphyService
