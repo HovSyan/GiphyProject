@@ -3,12 +3,17 @@
   <button #searchButton (click)="onSearchClick()">Search</button>
 </div>
 <div *ngIf="searchResultGifs.length > 0">
-  <div *ngFor="let gifObject of searchResultGifs; trackBy: trackById">
-    <img src="{{gifObject.images.original.url}}" [alt]="gifObject.title">
+  <div class="h-display-flex h-flex-wrap h-margin-top-30px">
+    <span *ngFor="let gifObject of searchResultGifs; trackBy: trackById" class="h-margin-10px">
+      <img src="{{gifObject.images.original.url}}" [alt]="gifObject.title">
+    </span>
   </div>
 
-  <button class="h-width-6em h-height-2em" (click)="onLoadMoreClick()">Load more</button>
+  <div>
+    <button class="h-width-6em h-height-2em" (click)="onLoadMoreClick()">Load more</button>
+  </div>
 </div>
+
 <div *ngIf="onceSearched && searchResultGifs.length == 0" class="h-padding-5px h-color-white">
   <p>No gifs found</p>
 </div>
