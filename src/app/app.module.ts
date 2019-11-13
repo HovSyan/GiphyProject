@@ -7,11 +7,13 @@ import {FormsModule} from '@angular/forms';
 import {GiphyService} from './services/giphy.service';
 import {HttpClientModule} from '@angular/common/http';
 import {LazyLoadImageModule, scrollPreset} from 'ng-lazyload-image';
+import { HButtonComponent } from './h-button/h-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GiphyComponent
+    GiphyComponent,
+    HButtonComponent
   ],
   imports: [
     BrowserModule,
