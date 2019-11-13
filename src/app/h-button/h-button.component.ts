@@ -10,6 +10,8 @@ export class HButtonComponent implements OnInit {
   @Output() clickEvent: EventEmitter<any> = new EventEmitter();
 
   @Input() innerText: string;
+  @Input() id: string;
+  @Input() class: string;
 
   constructor() { }
 

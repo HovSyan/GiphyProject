@@ -19,10 +19,6 @@ img {
   height: 200px;
 }
 
-.h-height-2em {
-  height: 2em;
-}
-
 .h-padding-5px {
   padding: 5px;
 }
@@ -30,10 +26,6 @@ img {
 .h-fixed-position-top {
   position: relative;
   top: 0;
-}
-
-.h-width-6em {
-  width: 6em;
 }
 
 .h-color-white {
@@ -44,17 +36,10 @@ img {
   margin: 10px;
 }
 
-
 .h-margin-top-30px {
   margin-top: 30px;
 }
 
 .h-flex-wrap {
   flex-wrap: wrap;
-}
-
-@media only screen and (max-width: 620px) {
-  #h-search-button {
-    margin: 5px 0 5px 0;
-  }
 }

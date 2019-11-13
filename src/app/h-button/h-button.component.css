@@ -4,11 +4,16 @@ button {
   border: none;
   margin-left: 20px;
   color: #232624;
-  width: 5em;
   border-radius: 5px;
-  height: 100%;
   text-align: center;
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 620px) {
+  #h-search-button {
+    margin: 5px 0 5px 0;
+  }
+}
+

@@ -9,3 +9,15 @@ body {
 .h-display-flex {
   display: flex;
 }
+
+.h-width-6em {
+  width: 6em;
+}
+
+.h-height-2em {
+  height: 2em;
+}
+
+.h-height-100per {
+  height: 100%;
+}
