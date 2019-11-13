@@ -89,3 +89,9 @@ img {
 .h-flex-wrap {
   flex-wrap: wrap;
 }
+
+@media only screen and (max-width: 620px) {
+  #h-search-button {
+    margin: 5px 0 5px 0;
+  }
+}
