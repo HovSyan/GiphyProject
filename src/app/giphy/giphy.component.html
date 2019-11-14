@@ -1,6 +1,6 @@
 <div class="h-height-2em h-padding-5px h-fixed-position-top">
   <input type="text" placeholder="Search for a giph" [(ngModel)]="searchWord">
-  <app-h-button [id]="'h-search-button'" [class]="'h-width-6em h-height-2em h-height-100per'" #searchButton (click)="onSearchClick($event)" [innerText]="'Search'"></app-h-button>
+  <app-h-button [id]="'h-search-button'" [class]="'h-width-6em h-height-2em h-height-100per'" #searchButton (click)="onSearchClick()" [innerText]="'Search'"></app-h-button>
 </div>
 <div *ngIf="searchResultGifs.length > 0">
   <div class="h-display-flex h-flex-wrap h-margin-top-30px">

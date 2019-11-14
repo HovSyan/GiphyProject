@@ -1,4 +1,4 @@
 {
-  "giphyApiUrl": "http://api.giphy.com/v1/",
+  "giphyApiUrl": "https://api.giphy.com/v1/",
   "giphyApiRemoteKey": "1aw3PKMUjfvRv5ktpejsw22winKbLmFp"
 }
